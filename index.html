@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=0.9,user-scalable=no">
+    <meta http-equiv="no-cache">
+    <meta http-equiv="Expires" content="-1">
+    <meta http-equiv="Cache-Control" content="no-cache">
+    <title>Змейка</title>
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/style.css?v=18">
+    <script type="text/javascript" src="js/script.js?v=18" defer></script>
+</head>
+
+<body>
+    <div class="nickname"></div>
+    <div class="menu">
+        <div class="menu_button">Открыть меню</div>
+        <div class="top_players_button">Таблица лидеров</div>
+        <div class="binds_button">Управление</div>
+        <div class="settings_button">Настройки</div>
+        <a class="code_button" href="images/carbon.png" target="_blank">Посмотреть код</a>
+    </div>
+    <table class="top_players_table">
+        <div class="table_close">Закрыть таблицу</div>
+        <tr>
+            <td>Место</td>
+            <td>Ник</td>
+            <td>Лучший результат</td>
+        </tr>
+    </table>
+    <div class="settings">
+        <div class="settings_close">Закрыть настройки</div>
+        <div class="setting_wrapper">
+            <input id="animation" type="checkbox" checked><label for="animation"><strong>Анимация </strong>(выключение повышает фпс на слабых устройствах)</label>
+        </div>
+        <label for="speed"><strong>Скорость змеи </strong>(чем меньше цифра тем быстрее): <input id="speedValue" type="text" value="150"></label>
+        <input id="speed" type="range" min="50" max="300" value="150" step="50">
+        <div class="note">Настройки сбрасываются после перезагрузки страницы</div>
+    </div>
+    <div class="binds">
+        <div class="binds_close">Закрыть управление</div>
+        <p><strong>Клавиатура: </strong>Направление движения - стрелками или WASD<br>Пауза - пробел или P.</p>
+        <hr>
+        <p><strong>Сенсор: </strong> Направление движения - стрелками на экране<br>Пауза - нажатием на игровое поле.</p>
+        <hr>
+        <p>Пауза снимается той же кнопкой что ставится, либо любой кнопкой направления.</p>
+        <hr>
+        <p>На 180 градусов одним нажатием поворачивать нельзя.</p>
+        <hr>
+        <p>Смена ника нажатием на ник</p>
+    </div>
+    <h1>Змейка</h1>
+    <div id="game_field">
+        <div id="fps"></div>
+        <div class="control">Управление стрелочками, пауза пробелом или нажатием на игровое поле</div>
+        <input id='pause' type="text" placeholder="" readonly>
+        <div class="score">
+            <label for="output">Счёт:</label>
+            <input id="output" type="text" placeholder="0">
+            <label for="output2">Лучшая попытка:</label>
+            <input id="output2" type="text" placeholder="0">
+        </div>
+        <div id="snake_head"></div>
+        <div id="apple"></div>
+    </div>
+    <div class="buttons">
+        <div class="left">←</div>
+        <div class="right">→</div>
+        <div class="up">↑</div>
+        <div class="down">↓</div>
+    </div>
+</body>
+
+</html>
