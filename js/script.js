@@ -105,9 +105,9 @@ const speedRange = document.getElementById('speed')
 const speedShow = document.getElementById('speedValue')
 speedRange.onchange = () => {
     speedShow.value = speedRange.value
-    speed = speedRange.value
-    snakeHead.style.transition = `${speedRange.value}ms linear`
-    if (snakeBody) snakeBody.forEach(elem => {elem.style.transition = `${+speedRange.value}ms linear`})
+    speed = 350 - (speedRange.value * 50)
+    snakeHead.style.transition = `${speed}ms linear`
+    if (snakeBody) snakeBody.forEach(elem => {elem.style.transition = `${speed}ms linear`})
 }
 
 // Binds menu
@@ -215,7 +215,7 @@ function body_grow() {
         gameField.insertAdjacentHTML('beforeEnd', '<div class="snake_body snake_body-noAnimate"></div>')
     } 
     snakeBody = document.querySelectorAll(".snake_body")
-    snakeBody.forEach(elem => {elem.style.transition = `${speedRange.value}ms linear`})
+    snakeBody.forEach(elem => {elem.style.transition = `${speed}ms linear`})
 }
 
 function body_position() {
